@@ -26,6 +26,8 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
+const APPSCRIPT_WEBAPP_URL="https://script.google.com/macros/s/AKfycbxYfvw3imdX8AHAO9zy_hfq8liNU8FQSE_E3D12rQ_ews5HhZszqOZp7c66db5O_SFGdQ/exec"
+
 function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -531,6 +533,44 @@ function AboutSection() {
 }
 
 function LeadCapture() {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      fullname: String(formData.get("fullname") || ""),
+      email: String(formData.get("email") || ""),
+      contact: String(formData.get("contact") || ""),
+      preparationFor: String(formData.get("preparationFor") || ""),
+    };
+
+    try {
+      const response = await fetch(APPSCRIPT_WEBAPP_URL, {
+        method: "POST",
+        mode: 'no-cors', // Essential for Apps Script
+        cache: 'no-cache',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result?.result === "success") {
+        alert("Thank you! We'll notify you about the launch.");
+        form.reset();
+      } else {
+        alert("Something went wrong while submitting your details. Please try again.");
+      }
+    } catch (error) {
+      alert("Unable to submit right now. Please check your connection and try again.");
+      console.error("Lead form submission error", error);
+    }
+  }
+
   return (
     <section
       id="lead"
@@ -542,10 +582,7 @@ function LeadCapture() {
           <p className="text-sm font-semibold uppercase tracking-widest text-[#393186]">
             Stay Informed
           </p>
-          <h2
-            id="stay-informed"
-            className="text-3xl font-bold text-slate-900 sm:text-4xl"
-          >
+          <h2 id="stay-informed" className="text-3xl font-bold text-slate-900 sm:text-4xl">
             Stay Informed About the April 2026 Launch
           </h2>
           <p className="text-lg text-slate-600">
@@ -569,13 +606,13 @@ function LeadCapture() {
           </ul>
         </div>
 
-        <form className="grid gap-4">
+        <form className="grid gap-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="space-y-2 text-sm font-medium text-slate-800">
               Name
               <input
                 type="text"
-                name="name"
+                name="fullname"
                 placeholder="Your full name"
                 className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-[#393186] focus:ring-2 focus:ring-[#393186]/20"
               />
@@ -594,7 +631,7 @@ function LeadCapture() {
             Mobile number (optional)
             <input
               type="tel"
-              name="mobile"
+              name="contact"
               placeholder="+91 90000 00000"
               className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-[#393186] focus:ring-2 focus:ring-[#393186]/20"
             />
@@ -615,7 +652,7 @@ function LeadCapture() {
           </label>
 
           <button
-            type="button"
+            type="submit"
             className="mt-2 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#393186] via-[#393186] to-[#d7b56d] px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
           >
             Get Notified at Launch
@@ -666,7 +703,7 @@ function ContactSection() {
           </p>
           <p>
             <span className="font-semibold text-slate-900">Email:</span>{" "}
-            ramesh@ramanjaneya.in
+            info@ramanjaneya.in
           </p>
         </div>
       </div>
