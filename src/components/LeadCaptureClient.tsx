@@ -29,7 +29,7 @@ export default function LeadCaptureClient() {
       });
 
       // Some Apps Script deployments with doPost return empty body; treat non-error status as success
-      if (response.ok) {
+      if (response.status === 302) {
         alert("Thank you! We'll notify you about the launch.");
         form.reset();
         return;
