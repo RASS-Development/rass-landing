@@ -20,6 +20,8 @@ export default function LeadCaptureClient() {
     try {
       const response = await fetch(APPSCRIPT_WEBAPP_URL, {
         method: "POST",
+        mode: 'no-cors', // Essential for Apps Script
+        cache: 'no-cache',
         headers: {
           "Content-Type": "application/json",
         },
@@ -72,7 +74,7 @@ export default function LeadCaptureClient() {
       <label className="space-y-2 text-sm font-medium text-slate-800">
         Mobile number (optional)
         <input
-          type="tel"
+          type="text"
           name="contact"
           placeholder="+91 90000 00000"
           className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-[#393186] focus:ring-2 focus:ring-[#393186]/20"
