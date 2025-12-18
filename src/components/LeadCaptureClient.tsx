@@ -28,15 +28,16 @@ export default function LeadCaptureClient() {
         body: JSON.stringify(payload),
       });
 
+      console.log(response)
       // Some Apps Script deployments with doPost return empty body; treat non-error status as success
-      if (response.status === 302) {
+      if (response.ok) {
         alert("Thank you! We'll notify you about the launch.");
         form.reset();
         return;
       }
 
       const result = await response.json().catch(() => ({}));
-
+      console.log(result)
       if (result?.result === "success") {
         alert("Thank you! We'll notify you about the launch.");
         form.reset();
