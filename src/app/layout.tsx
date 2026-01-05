@@ -14,10 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title:
-    "Ram Anjaneya Student Services | NTA-like Online Mock Tests for NEET & JEE",
+    "PREPVANTAGE by Ram Anjaneya Student Services | NTA-like NEET & JEE Online Mock Tests",
   description:
-    "AI-powered online mock test platform offering NTA-like exams for NEET & JEE with detailed solutions, analytics, and a launch targeted for April 2026.",
+    "PREPVANTAGE, by Ram Anjaneya Student Services, offers NTA-like online mock tests for NEET and JEE with detailed solutions and AI-based performance analysis.",
   keywords: [
+    "PREPVANTAGE",
     "NEET mock test",
     "JEE mock test",
     "online exam practice",

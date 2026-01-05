@@ -86,7 +86,7 @@ function HeroSection() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#393186] via-[#2f2a72] to-[#1f1b55] px-6 py-16 text-white shadow-2xl sm:px-10 sm:py-20"
+      className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#393186] via-[#2f2a72] to-[#1f1b55] px-6 py-16 text-white shadow-2xl sm:px-10 sm:py-20"
     >
       <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
       <div className="absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
@@ -94,17 +94,27 @@ function HeroSection() {
       <div className="relative flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl space-y-6">
           <span className="inline-flex w-fit rounded-full bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/90">
-            Coming Soon · April 2026
+            COMING SOON · APRIL 2026
           </span>
           <div className="space-y-4">
-            <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              NTA-like Online Mock Tests for NEET &amp; JEE
+            <h1 className="text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
+              PREPVANTAGE – NTA-like Online Mock Tests for NEET &amp; JEE
             </h1>
+            <p className="text-sm font-semibold text-white/90">
+              By Ram Anjaneya Student Services
+            </p>
             <p className="text-lg leading-relaxed text-white/85">
-              Ram Anjaneya Student Services is building an AI-powered online
-              mock test platform that mirrors the official NTA exam experience,
-              with detailed solutions and performance analytics to help every
-              aspirant improve faster.
+              PREPVANTAGE is an AI-powered online mock test platform that mirrors
+              the official NTA exam experience for NEET and JEE aspirants. It
+              offers detailed solutions and AI-driven performance analytics to
+              help every student improve faster, with no limit on the number of
+              students who can use the platform. Designed for serious aspirants
+              across India who want an exam-like practice environment at home.
+            </p>
+            <p className="text-sm leading-relaxed text-white/75">
+              Initially available in English, as most NTA candidates write in
+              English; Hindi support is planned next, followed by other regional
+              languages based on demand.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -230,7 +240,7 @@ const features = [
 
 function IconWrapper({ children }: { children: ReactNode }) {
   return (
-    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#393186]/18 via-[#393186]/12 to-[#d7b56d]/35 text-[#393186] shadow-inner">
+    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-[#393186]/18 via-[#393186]/12 to-[#d7b56d]/35 text-[#393186] shadow-inner">
       {children}
     </div>
   );
@@ -499,7 +509,7 @@ function AboutSection() {
       </div>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
-        <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/60 p-8 shadow-sm">
+        <div className="rounded-3xl border border-slate-200 bg-linear-to-br from-white to-slate-50/60 p-8 shadow-sm">
           <h3 className="text-xl font-semibold text-slate-900">Vision</h3>
           <p className="mt-4 text-slate-600">
             Deliver an authentic exam experience with analytics that help every
@@ -539,7 +549,7 @@ function LeadCapture() {
       className="scroll-mt-28 py-16 sm:py-20"
       aria-labelledby="stay-informed"
     >
-      <div className="grid gap-10 rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-slate-50 p-8 shadow-sm lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
+      <div className="grid gap-10 rounded-3xl border border-slate-200 bg-linear-to-br from-slate-50 via-white to-slate-50 p-8 shadow-sm lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
         <div className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-widest text-[#393186]">
             Stay Informed
@@ -549,7 +559,7 @@ function LeadCapture() {
           </h2>
           <p className="text-lg text-slate-600">
             Share your details to receive updates, launch announcements, and
-            early-access information for the NTA-like NEET and JEE mock test
+            early-access information for the PREPVANTAGE NEET and JEE mock test
             platform.
           </p>
           <ul className="space-y-2 text-sm text-slate-600">
