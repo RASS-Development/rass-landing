@@ -11,7 +11,7 @@ export default function Home() {
         <PlatformFeatures />
         <FutureExams />
         <AboutSection />
-        <LeadCapture />
+        {/* <LeadCapture /> */}
         <ContactSection />
       </main>
       <Footer />
@@ -94,7 +94,7 @@ function HeroSection() {
       <div className="relative flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl space-y-6">
           <span className="inline-flex w-fit rounded-full bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/90">
-            COMING SOON · APRIL 2026
+            COMING SOON
           </span>
           <div className="space-y-4">
             <h1 className="text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
@@ -543,6 +543,7 @@ function AboutSection() {
 }
 
 function LeadCapture() {
+  /*
   return (
     <section
       id="lead"
@@ -555,7 +556,7 @@ function LeadCapture() {
             Stay Informed
           </p>
           <h2 id="stay-informed" className="text-3xl font-bold text-slate-900 sm:text-4xl">
-            Stay Informed About the April 2026 Launch
+            Stay Informed About the Launch
           </h2>
           <p className="text-lg text-slate-600">
             Share your details to receive updates, launch announcements, and
@@ -578,11 +579,13 @@ function LeadCapture() {
           </ul>
         </div>
 
-        {/* Client-only interactive form */}
+        // Client-only interactive form
         <LeadCaptureClient />
       </div>
     </section>
   );
+  */
+  return null;
 }
 
 function ContactSection() {
@@ -653,7 +656,7 @@ function Footer() {
           </div>
         </div>
         <p className="text-sm text-slate-500">
-          Launching April 2026 · Crafted for student success
+          Launching Soon · Crafted for student success
         </p>
       </div>
     </footer>
